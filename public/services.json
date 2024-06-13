@@ -1,0 +1,92 @@
+[
+    {
+        "service_type": "Software",
+        "service_name": "Applicant Tracking System (ATS)",
+        "img_url" : "https://i.ibb.co/719pMkV/ATS-diagram.png",
+        "description": "Manages job postings, applications, and streamlines the recruitment process."
+    },
+    {
+        "service_type": "Software",
+        "service_name": "Onboarding Software",
+        "img_url" : "https://i.ibb.co/vhY6Jzw/Background-2.webp",
+        "description": "Automates and simplifies the new hire process, ensuring a smooth transition."
+    },
+    {
+        "service_type": "Software",
+        "service_name": "Time & Attendance",
+        "img_url" : "https://i.ibb.co/tcRNJD8/time-and-attendance-5bec12f63ccf3.jpg",
+        "description": "Tracks employee hours, automates timesheets, and manages leave requests."
+    },
+    {
+        "service_type": "Software",
+        "service_name": "Payroll Management",
+        "img_url" : "https://i.ibb.co/R9MVhBJ/Payroll-Management-article-image.jpg",
+        "description": "Calculates salaries and taxes, automates payroll processing, and ensures timely payments."
+    },
+    {
+        "service_type": "Software",
+        "service_name": "Benefits Administration",
+        "img_url" : "https://i.ibb.co/zZ3Wn73/benefits-administration.jpg",
+        "description": "Enables employees to enroll in benefits programs, manage their accounts, and submit claims."
+    },
+    {
+        "service_type": "Software",
+        "service_name": "Performance Management",
+        "img_url" : "https://i.ibb.co/ScbyTzW/Performance-Management-FINAL-ad4e842b85f747c1b4884095a2de0571.jpg",
+        "description": "Facilitates setting goals, tracking employee progress, and providing performance feedback."
+    },
+    {
+        "service_type": "Service",
+        "service_name": "Payroll Processing",
+        "img_url" : "https://i.ibb.co/HtTKZKT/What-is-Payroll-Processing-80-min.jpg",
+        "description": "Third-party handles calculation, distribution of paychecks, and tax withholdings."
+    },
+    {
+        "service_type": "Service",
+        "service_name": "Benefits Administration",
+        "img_url" : "https://i.ibb.co/zZ3Wn73/benefits-administration.jpg",
+        "description": "Outsourcing management of employee benefits plans, enrollment, and claims processing."
+    },
+    {
+        "service_type": "Service",
+        "service_name": "HR Compliance",
+        "img_url" : "https://i.ibb.co/RBFdmhX/What-is-HR-Compliance-9654e387-1024x672.jpg",
+        "description": "Ensures company adherence to labor laws and regulations, mitigating legal risks."
+    },
+    {
+        "service_type": "Service",
+        "service_name": "HR Risk Management",
+        "img_url" : "https://i.ibb.co/4MYgGyy/5-Biggest-HR-Risks-for-your-Workplace.png",
+        "description": "Provides guidance and strategies to minimize risks associated with employee relations and lawsuits."
+    },
+    {
+        "service_type": "Service",
+        "service_name": "HR Consulting",
+        "img_url" : "https://i.ibb.co/nztyZDP/HR-1.png",
+        "description": "Offers expertise and advice on best practices in HR management, policies, and procedures."
+    },
+    {
+        "service_type": "Combined",
+        "service_name": "HR Management Suite",
+        "img_url" : "https://i.ibb.co/18JVbbq/human-resource-management-system-hrms-500x500.png",
+        "description": "Comprehensive software and service package for all your employee management needs."
+    },
+    {
+        "service_type": "Service",
+        "service_name": "Employee Training Management",
+        "img_url" : "https://i.ibb.co/qnNBmm7/Gantt-Chart-Templates-5-e1694624376899.png",
+        "description": "Tracks employee training records, manages course enrollment, and delivers online learning programs (may be offered as software or service)."
+    },
+    {
+        "service_type": "Service",
+        "service_name": "Employee Relations",
+        "img_url" : "https://i.ibb.co/Ldz13Zg/employee-relations-cover.png",
+        "description": "Provides guidance on handling employee disputes, grievances, and disciplinary actions."
+    },
+    {
+        "service_type": "Service",
+        "service_name": "Employee Relations",
+        "img_url" : "https://i.ibb.co/Ldz13Zg/employee-relations-cover.png",
+        "description": "Provides guidance on handling employee disputes, grievances, and disciplinary actions."
+    }
+]
