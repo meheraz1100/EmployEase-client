@@ -79,7 +79,7 @@ const AllEmployee = () => {
 
   return (
     <div className="dark:text-white text-black">
-      <div className="flex justify-evenly my-5 ">
+      <div className="flex justify-evenly my-8 ">
         <h2 className="text-4xl">All Employee: </h2>
         <h2 className="text-4xl">Total Employee: {users.length}</h2>
       </div>
@@ -95,6 +95,7 @@ const AllEmployee = () => {
               <th>Role</th>
               <th>Action</th>
               <th>Fire</th>
+              <th>Verify Status</th>
             </tr>
           </thead>
           <tbody>
@@ -113,6 +114,24 @@ const AllEmployee = () => {
                     user.role === 'employee' ? <td className="btn"><button onClick={() => handleMakeHr(user)}>Make HR</button></td> : <td></td>
                     }
                     {user.role === 'admin' ? <td className="text-2xl text-red-600"><button onClick={unableToDeleteAdmin}><IoWarning /></button></td> : <td className="text-xl text-red-600 font-bold"><button onClick={() => handleDelete(user)}>Fire</button></td>}
+                    {
+                      user.verify === 'true' ? <div className="badge badge-accent">Verified</div> : <div className="badge badge-error gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        className="inline-block w-4 h-4 stroke-current"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                      </svg>
+                      Not Verified
+                    </div>
+                    }
                   </tr>)
             }
             
