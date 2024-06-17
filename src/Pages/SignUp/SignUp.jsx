@@ -42,6 +42,7 @@ const SignUp = () => {
         bank_account_no: parseFloat(data.bank_account_no),
         image: res.data.data.display_url,
         role: "employee",
+        verify: "false"
       };
       //
       const userRes = await axiosPublic.post("/users", user);

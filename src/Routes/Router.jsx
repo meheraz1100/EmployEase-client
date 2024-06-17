@@ -9,6 +9,12 @@ import AllEmployee from "../Pages/Dashboard/AllEmployee/AllEmployee";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import EmployeeList from "../Pages/Dashboard/EmployeeList/EmployeeList";
 import Progress from "../Pages/Dashboard/Progress/Progress";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import WorkSheet from "../Pages/Dashboard/WorkSheet/WorkSheet";
+import EmployeeDetails from "../Pages/Dashboard/EmployeeList/EmployeeDetails";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import Profile from "../Pages/Profile/Profile";
+import Messages from "../Pages/Dashboard/Messages/Messages";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +36,10 @@ export const router = createBrowserRouter([
         {
           path: "/contact",
           element: <ContactUs></ContactUs>
+        },
+        {
+          path: "/profile",
+          element: <Profile></Profile>
         }
     ]
   },
@@ -46,14 +56,39 @@ export const router = createBrowserRouter([
         path: 'admin-home',
         element: <AdminHome></AdminHome>
       },
+      {
+        path: 'messages',
+        element: <Messages></Messages>,
+        loader: () => fetch('http://localhost:3000/messages')
+      },
       // hr route only
       {
         path: 'employee-list',
         element: <EmployeeList></EmployeeList>
       },
       {
+        path: 'employee-list/employee-details/:id',
+        element: <EmployeeDetails></EmployeeDetails>,
+        loader: ({params}) => fetch(`http://localhost:3000/employee-details/${params.id}`)
+      },
+      {
+        path: 'employee-list/payment/:id',
+        element: <Payment></Payment>,
+        loader: ({params}) => fetch(`http://localhost:3000/payment/${params.id}`)
+      },
+      {
         path: 'progress',
-        element: <Progress></Progress>
+        element: <Progress></Progress>,
+        loader: () => fetch('http://localhost:3000/worksheet')
+      },
+      // employee route only
+      {
+        path: 'payment-history',
+        element: <PaymentHistory></PaymentHistory>
+      },
+      {
+        path: 'work-sheet',
+        element: <WorkSheet></WorkSheet>
       }
     ]
   }

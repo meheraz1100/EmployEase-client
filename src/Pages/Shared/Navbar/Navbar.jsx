@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders"
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
 
@@ -23,19 +24,26 @@ const Navbar = () => {
     <>
       {user ? <>
         <li>
-          <Link>Profile</Link>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/profile">Profile</Link>
         </li>
         <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <Link>Contact Us</Link>
+          <Link to="/contact">Contact Us</Link>
         </li>
         <li>
           <button onClick={handleLogOut}>Logout</button>
         </li>
-      </> : <><li><Link to="/login">Login</Link></li>
-            <li><Link to="/contact">Contact Us</Link></li>
+      </> : 
+        <>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/contact">Contact Us</Link>
+        </li>
       </>}
     </>
   );
@@ -49,18 +57,15 @@ const Navbar = () => {
             EmployEase
           </a>
         </div>
-        <div className="flex-none">
+        <div className="flex-none" >
           {user ? <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
-              <div className="w-10 rounded-full">
-                <img
-                  alt=""
-                  src={user?.photoURL}
-                />
+              <div className=" text-3xl text-black dark:text-white rounded-full">
+              <FaUserCircle title={user?.displayName} />
               </div>
             </div>
             <ul
@@ -69,7 +74,12 @@ const Navbar = () => {
             >
               {navOptions}
             </ul>
-          </div> : <Link to="/login" className="btn btn-ghost"><button>Login</button></Link>}
+          </div>
+           : 
+           <>
+            <Link to="/contact" className="btn dark:btn-ghost mr-3"><button>Contact Us</button></Link>
+            <Link to="/login" className="btn dark:btn-ghost"><button>Login</button></Link>
+           </>}
         </div>
       </div>
     </div>
