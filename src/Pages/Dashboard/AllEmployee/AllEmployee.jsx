@@ -66,6 +66,7 @@ const AllEmployee = () => {
   }
 
   const handleMakeHr = (user) => {
+    console.log(user);
     axiosSecure.patch(`/users/hr/${user._id}`)
     .then(res => {
       console.log(res.data);
@@ -75,6 +76,25 @@ const AllEmployee = () => {
       }
     })
   }
+
+
+  
+  // alternative way
+  // control user role with a single api calling
+
+  // const updateUserRole = (userId, role) => {
+  //   // console.log(user);
+  //   axiosSecure.patch(`/users/update-role/${userId}`, {
+  //     role
+  //   })
+  //   .then(res => {
+  //     console.log(res.data);
+  //     if(res.data.modifiedCount > 0){
+  //       refetch()
+  //       toast.success(`Success`)
+  //     }
+  //   })
+  // }
 
 
   return (
@@ -98,7 +118,7 @@ const AllEmployee = () => {
               <th>Verify Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-xs lg:text-sm">
             {
                 users.map((user, index) => <tr key={user._id}>
                     <th>{index + 1}</th>
@@ -113,9 +133,18 @@ const AllEmployee = () => {
                     &&
                     user.role === 'employee' ? <td className="btn"><button onClick={() => handleMakeHr(user)}>Make HR</button></td> : <td></td>
                     }
+
+                    {/* alternative way */}
+                    {/* {
+                    user.role === 'admin' ? <td>Admin</td> : <td>Admin</td>
+                    &&
+                    user.role === 'hr' ? <td className="btn"><button onClick={() => updateUserRole(user?._id, 'admin')}>Make Admin</button></td> : <td></td>
+                    &&
+                    user.role === 'employee' ? <td className="btn"><button onClick={() => updateUserRole(user?._id, 'hr')}>Make HR</button></td> : <td></td>
+                    } */}
                     {user.role === 'admin' ? <td className="text-2xl text-red-600"><button onClick={unableToDeleteAdmin}><IoWarning /></button></td> : <td className="text-xl text-red-600 font-bold"><button onClick={() => handleDelete(user)}>Fire</button></td>}
                     {
-                      user.verify === 'true' ? <div className="badge badge-accent">Verified</div> : <div className="badge badge-error gap-2">
+                      user.verify === 'true' ? <div className="badge badge-accent">Verified</div> : <div className="badge badge-error lg:gap-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -129,7 +158,7 @@ const AllEmployee = () => {
                           d="M6 18L18 6M6 6l12 12"
                         ></path>
                       </svg>
-                      Not Verified
+                      Unverified
                     </div>
                     }
                   </tr>)

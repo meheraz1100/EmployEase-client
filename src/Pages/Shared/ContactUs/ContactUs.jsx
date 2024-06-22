@@ -13,7 +13,7 @@ const ContactUs = () => {
 
     console.log(newMessage)
 
-    fetch('http://localhost:3000/messages', {
+    fetch('https://m-72-employ-ease-server.vercel.app/messages', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

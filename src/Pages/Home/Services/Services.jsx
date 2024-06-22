@@ -3,7 +3,7 @@ import SectionHeading from "../../../Components/SectionHeading/SectionHeading";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/services")
+    fetch("https://m-72-employ-ease-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
