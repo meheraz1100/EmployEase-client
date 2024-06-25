@@ -30,7 +30,7 @@ const EmployeeDetailsAll = () => {
 
     
     if(inputValue > floatedFromDB){
-      fetch(`http://localhost:3000/users/${loadedData._id}`, {
+      fetch(`https://m-72-employ-ease-server.vercel.app/users/${loadedData._id}`, {
         method: 'PUT',
         headers: {
           'content-type': 'application/json'

@@ -13,7 +13,7 @@ const PaymentHistory = () => {
 
   const [ payments, setPayments ] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3000/payments')
+    fetch('https://m-72-employ-ease-server.vercel.app/payments')
     .then(res => res.json())
     .then(data => setPayments(data));
   }, [])

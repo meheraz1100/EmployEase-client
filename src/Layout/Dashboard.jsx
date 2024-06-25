@@ -98,7 +98,7 @@ const Dashboard = () => {
                         !isAdmin && !isHR && (
                             <>
                             <li><NavLink to="/dashboard/work-sheet">Work Sheet</NavLink></li>
-                            <li><NavLink to="/dashboard/payment-history">Payment History</NavLink></li>
+                            {/* <li><NavLink to="/dashboard/payment-history">Payment History</NavLink></li> */}
                             <li><NavLink to="/">Home</NavLink></li>
                             </>
                         )

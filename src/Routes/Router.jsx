@@ -63,17 +63,17 @@ export const router = createBrowserRouter([
       {
         path: 'messages',
         element: <Messages></Messages>,
-        loader: () => fetch('http://localhost:3000/messages')
+        loader: () => fetch('https://m-72-employ-ease-server.vercel.app/messages')
       },
       {
         path: 'verified-employee-and-hr',
         element: <VerifiedEmployeeAndHR></VerifiedEmployeeAndHR>,
-        loader: () => fetch('http://localhost:3000/verified-employee-and-hr')
+        loader: () => fetch('https://m-72-employ-ease-server.vercel.app/verified-employee-and-hr')
       },
       {
         path: 'all-employee-list/employee-details/:id',
         element: <EmployeeDetailsAll></EmployeeDetailsAll>,
-        loader: ({params}) => fetch(`http://localhost:3000/employee-details/${params.id}`)
+        loader: ({params}) => fetch(`https://m-72-employ-ease-server.vercel.app/employee-details/${params.id}`)
       },
       // hr route only
       {
@@ -83,17 +83,17 @@ export const router = createBrowserRouter([
       {
         path: 'employee-list/employee-details/:id',
         element: <EmployeeDetails></EmployeeDetails>,
-        loader: ({params}) => fetch(`http://localhost:3000/employee-details/${params.id}`)
+        loader: ({params}) => fetch(`https://m-72-employ-ease-server.vercel.app/employee-details/${params.id}`)
       },
       {
         path: 'employee-list/payment/:id',
         element: <Payment></Payment>,
-        loader: ({params}) => fetch(`http://localhost:3000/payment/${params.id}`)
+        loader: ({params}) => fetch(`https://m-72-employ-ease-server.vercel.app/payment/${params.id}`)
       },
       {
         path: 'progress',
         element: <Progress></Progress>,
-        loader: () => fetch('http://localhost:3000/worksheet')
+        loader: () => fetch('https://m-72-employ-ease-server.vercel.app/worksheet')
       },
       // employee route only
       {
