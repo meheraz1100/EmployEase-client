@@ -73,11 +73,11 @@ const Dashboard = () => {
                   </label>
                 </div>
                 <div className="flex-none hidden lg:block">
-                <ul className="menu p-4">
+                <ul className="menu p-4 lg:text-base">
                     {
                         isAdmin && (<>
-                        
                         <li><NavLink to="/dashboard/all-employee-list">All Employee</NavLink></li>
+                        <li><NavLink to="/dashboard/verified-employee-and-hr">Verified Employee and HR</NavLink></li>
                         <li><NavLink to={`/dashboard/admin-home/`}>Admin Home</NavLink></li>
                         <li><NavLink to='/dashboard/messages'>Messages</NavLink></li>
                         <li><NavLink to="/">Home</NavLink></li>

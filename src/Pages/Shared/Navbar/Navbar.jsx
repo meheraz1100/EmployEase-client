@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaUserCircle } from "react-icons/fa";
 
@@ -8,11 +8,13 @@ const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext);
   // const [ isAdmin ] = useAdmin();
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
     logOut()
     .then(() => {})
     toast.success('log out success')
+    navigate('/')
     .catch(error => console.log(error));
   }
 

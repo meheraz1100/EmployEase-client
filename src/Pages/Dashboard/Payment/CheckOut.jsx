@@ -1,8 +1,10 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+
+import Swal from "sweetalert2"
 
 const CheckOut = () => {
     // eslint-disable-next-line
@@ -14,6 +16,7 @@ const CheckOut = () => {
     const [paySuccess, setPaySuccess] = useState('');
     const stripe = useStripe();
     const elements = useElements();
+    const navigate = useNavigate();
     const axiosSecure = useAxiosSecure();
 
 
@@ -72,6 +75,30 @@ const CheckOut = () => {
             if(paymentIntent.status === 'succeeded'){
                 console.log('transaction id', paymentIntent.id);
                 setPaySuccess(paymentIntent.id)
+
+                // now save the payment in the database
+                const payment = {
+                    email: loadedData.email,
+                    salary: parseFloat(salary),
+                    transactionId: paymentIntent.id,
+                    date: new Date(), // UTC date convert. use moment JS
+                    status: 'Confirm',
+                    month: new Date().getMonth()
+                }
+
+                const res = await axiosSecure.post('/payments', payment);
+                console.log('payment saved', res.data);
+                // refetch();
+                if(res.data?.paymentResult?.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Salary Paid Success",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+                    }
+                    navigate('/dashboard/payment-history')
             }
         }
     }

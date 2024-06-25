@@ -18,7 +18,7 @@ const SignUp = () => {
   } = useForm();
   const axiosPublic = useAxiosPublic();
 
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, googleSignIn } = useContext(AuthContext);
   // console.log(createUser)
 
   const navigate = useNavigate();
@@ -42,7 +42,8 @@ const SignUp = () => {
         bank_account_no: parseFloat(data.bank_account_no),
         image: res.data.data.display_url,
         role: "employee",
-        verify: "false"
+        verify: "false",
+        status: "Fire"
       };
       //
       const userRes = await axiosPublic.post("/users", user);
@@ -86,6 +87,26 @@ const SignUp = () => {
         .catch((error) => console.log(error));
     });
   };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+    .then(result => {
+      console.log(result.user);
+      const userInfo = {
+        email: result.user?.email,
+        name: result.user?.displayName,
+        image: result.user?.photoURL,
+        role: 'employee',
+        verify: 'false',
+        status: 'Fire'
+      }
+      axiosPublic.post('/users', userInfo)
+      .then(res => {
+        console.log(res.data)
+        navigate('/')
+      })
+    })
+  }
 
   return (
     <div>
@@ -189,6 +210,9 @@ const SignUp = () => {
                     Social Media executive
                   </option>
                   <option value="digital_marketer">Digital Marketer</option>
+                  {errors.designation && (
+                    <span className="text-red-600">Designation is required</span>
+                  )}
                 </select>
               </div>
               <div className="form-control">
@@ -239,6 +263,9 @@ const SignUp = () => {
                     type="file"
                     className="file-input w-full max-w-xs"
                   />
+                  {errors.image && (
+                    <span className="text-red-600">image is required</span>
+                  )}
                 </div>
               </div>
               <div className="form-control mt-6">
@@ -249,7 +276,7 @@ const SignUp = () => {
                 />
               </div>
             </form>
-            <FcGoogle className="w-full btn btn-ghost"></FcGoogle>
+            <button onClick={handleGoogleSignIn}><FcGoogle className="w-full btn btn-ghost"></FcGoogle></button>
             <p className="text-center pb-6">
               <small>
                 Already Have an Account?

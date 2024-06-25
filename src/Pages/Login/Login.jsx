@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -12,6 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const axiosPublic = useAxiosPublic();
+  const [error, setError ] = useState('')
 
   const f = location.state?.from?.pathname || "/";
   console.log("state in the location login", location.state);
@@ -43,6 +44,12 @@ const Login = () => {
         },
       });
       navigate(f, { replace: true });
+    })
+    .catch((error) => {
+      // const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage)
+      setError(errorMessage)
     });
   };
 
@@ -53,7 +60,10 @@ const Login = () => {
       const userInfo = {
         email: result.user?.email,
         name: result.user?.displayName,
-        image: result.user?.photoURL
+        image: result.user?.photoURL,
+        role: 'employee',
+        verify: 'false',
+        status: 'Fire'
       }
       axiosPublic.post('/users', userInfo)
       .then(res => {
@@ -96,6 +106,7 @@ const Login = () => {
                     className="input input-bordered"
                     required
                   />
+                  
                   </div>
                   {/* password */}
                   <div className="form-control">
@@ -115,6 +126,7 @@ const Login = () => {
                       </a>
                     </label>
                   </div>
+                  <p className="text-red-500 my-5">{error}</p>
 
                   {/* submit */}
                   <div className="form-control mt-6">

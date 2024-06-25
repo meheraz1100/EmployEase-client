@@ -20,7 +20,7 @@ const EmployeeList = () => {
     });
   const [employees, setEmployees] = useState([]);
   useEffect(() => {
-    fetch("https://m-72-employ-ease-server.vercel.app/employees")
+    fetch("http://localhost:3000/employees")
       .then((res) => res.json())
       .then((data) => setEmployees(data));
   }, []);

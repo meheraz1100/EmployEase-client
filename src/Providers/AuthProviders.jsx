@@ -42,6 +42,20 @@ const AuthProviders = ({children}) => {
         })
     }
 
+    // const cUser = auth.currentUser
+    // const deleteUserFromFirebase = (cUser) => {
+    //         setLoading(true)
+    //         return deleteUser(user)
+    // }
+
+    // deleteUser(cUser).then(() => {
+    //     // User deleted.
+    //   }).catch((error) => {
+    //     // An error ocurred
+    //     // ...
+    //     console.log(error);
+    //   });
+
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
@@ -75,7 +89,8 @@ const AuthProviders = ({children}) => {
         signIn,
         logOut,
         updateUserProfile,
-        googleSignIn
+        googleSignIn,
+        // deleteUserFromFirebase
     }
     // console.log(authInfo)
 
