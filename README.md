@@ -8,6 +8,25 @@ Password : 123456Mm@
 HR Email : meheraz1100@gmail.com
 Password : 123456Mm@
 
+# How to Run this Application? 
+## Follow this steps: 
+
+### Firstly Clone this Project
+```
+https://github.com/meheraz1100/EmployEase-client.git
+```
+
+### Install the Dependencies
+```
+npm install
+```
+
+### Run this App Locally
+```
+npm run dev
+```
+
+
 ## Features
 # ----Admin------
 * Admin can fire Anyone 
