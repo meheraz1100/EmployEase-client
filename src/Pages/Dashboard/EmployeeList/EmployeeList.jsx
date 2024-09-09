@@ -25,7 +25,10 @@ const EmployeeList = () => {
       .then((data) => setEmployees(data));
   }, []);
 
-  const handleVerify = (user) => {
+
+
+
+const handleVerify = (user) => {
     axiosSecure.patch(`/employees/verify/${user._id}`)
     .then(res => {
         console.log(res.data);
@@ -35,7 +38,6 @@ const EmployeeList = () => {
         }
     })
   }
-
   return (
     <div>
         <h1 className="text-4xl font-bold text-center my-6">All Employee</h1>
@@ -62,9 +64,9 @@ const EmployeeList = () => {
               {employee.verify === 'false' ? <th><button className="btn-disabled" disabled>Pay</button></th> : <th className="btn btn-outline"><Link to={`payment/${employee._id}`}><button>Pay</button></Link></th>}
 
 
-              <td>{employee.verify === 'false' ? <button className="btn btn-ghost" onClick={() => handleVerify(employee)}>Verify</button> : <button className="btn-disabled text-base font-bold">Verified</button>}</td>
+           
 
-
+   <td>{employee.verify === 'false' ? <button className="btn btn-ghost" onClick={() => handleVerify(employee)}>Verify</button> : <button className="btn-disabled text-base font-bold">Verified</button>}</td>
               <td className="btn btn-ghost"><Link to={`employee-details/${employee._id}`}><button>{employee.name} Details</button></Link></td>
             </tr>)}
           </tbody>
