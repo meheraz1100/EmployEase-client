@@ -25,6 +25,6 @@ Password : 123456Mm@
 * Employee can submit a worksheet for HR
 * Each Employee can see their payment history
 
-#New Features
+## New Features
 * HR can verify a employee (Default : Verify : False)
 * Admin can added another Admin
