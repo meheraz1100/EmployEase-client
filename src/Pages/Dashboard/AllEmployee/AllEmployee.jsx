@@ -160,9 +160,13 @@ const AllEmployee = () => {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     {
-                    user.role === 'admin' ? <td>Admin</td> : <td>Admin</td>
+
+
+                      user.role === 'admin' ? <td>Admin</td> : <td>Admin</td>
                     &&
-                    user.role === 'hr' ? <td className="btn"><button onClick={() => handleMakeAdmin(user)}>Make Admin</button></td> : <td></td>
+
+
+                      user.role === 'hr' ? <td className="btn"><button onClick={() => handleMakeAdmin(user)}>Make Admin</button></td> : <td></td>
                     &&
                     user.role === 'employee' ? <td className="btn"><button onClick={() => handleMakeHr(user)}>Make HR</button></td> : <td></td>
                     }
