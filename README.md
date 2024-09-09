@@ -8,6 +8,9 @@ Password : 123456Mm@
 HR Email : meheraz1100@gmail.com
 Password : 123456Mm@
 
+# Server side Repo : 
+https://github.com/meheraz1100/EmployEase-Server
+
 ## Features
 # ----Admin------
 * Admin can fire Anyone 
