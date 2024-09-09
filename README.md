@@ -12,13 +12,11 @@ Password : 123456Mm@
 # ----Admin------
 * Admin can fire Anyone 
 * Admin can make HR to employee
-* Admin can added another Admin
 * Admin can check messages from Website visitor
 
 
 # ----HR------
 * HR can see whole details of a normal employee excluding Admin
-* HR can verify a employee (Default : Verify : False)
 * HR can the Progess which is submitted by all employees
 * HR can pay the salary of employees
 
@@ -26,3 +24,7 @@ Password : 123456Mm@
 # ----Employee------
 * Employee can submit a worksheet for HR
 * Each Employee can see their payment history
+
+#New Features
+* HR can verify a employee (Default : Verify : False)
+* Admin can added another Admin
